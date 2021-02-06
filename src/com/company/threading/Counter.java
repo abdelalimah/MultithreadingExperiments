@@ -17,8 +17,8 @@ public class Counter {
 
     }
 
-    public void decrement(){
-        synchronized (this){
+    public synchronized void decrement(){
+
             if(this.init < 100){
                 try{
                     this.wait();
@@ -31,7 +31,7 @@ public class Counter {
             }
 
             System.out.println("You shall all continue your work now");
-        }
+        
     }
 
     public synchronized void increment(){
